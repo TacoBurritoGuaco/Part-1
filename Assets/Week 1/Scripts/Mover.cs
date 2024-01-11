@@ -6,6 +6,8 @@ using UnityEngine;
 public class Mover : MonoBehaviour
 {
     float speed = 5f;
+    public GameObject missilePrefab;
+    public Transform spawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,5 +19,10 @@ public class Mover : MonoBehaviour
     {
         float direction = Input.GetAxis("Horizontal"); //Takes the left or right keys as a value when they are pressed
         transform.Translate(direction * speed * Time.deltaTime, 0, 0);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //make missile appear
+            Instantiate(missilePrefab, spawn.position, spawn.rotation);
+        }
     }
 }
