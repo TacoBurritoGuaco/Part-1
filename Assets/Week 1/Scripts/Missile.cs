@@ -35,4 +35,9 @@ public class Missile : MonoBehaviour
         Debug.Log("Missile Hit Something");
         Destroy(gameObject); //this deletes the game object
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Missile triggered Something");
+    }
 }
