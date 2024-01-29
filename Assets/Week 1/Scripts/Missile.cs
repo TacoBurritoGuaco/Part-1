@@ -7,7 +7,7 @@ public class Missile : MonoBehaviour
 
     float speed = 12f;
     Rigidbody2D rigidbody;
-    Vector2 direction = new Vector2(10, 0);
+    Vector2 direction = new Vector2(-10, 0); //temporary assignment vector change while I figure out how to have the cannons change the missile's direction as well as its rotation
     // Start is called before the first frame update
     void Start()
     {

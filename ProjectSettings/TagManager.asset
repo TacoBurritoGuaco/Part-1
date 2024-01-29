@@ -14,10 +14,10 @@ TagManager:
   - Lever
   - Barrel
   - Booster
-  - 
-  - 
-  - 
-  - 
+  - Wall
+  - InvisWall
+  - Player
+  - Button
   - 
   - 
   - 

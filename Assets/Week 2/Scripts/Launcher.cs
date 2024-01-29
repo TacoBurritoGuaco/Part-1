@@ -18,7 +18,7 @@ public class Launcher : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void FixedUpdate() //changed from ontriggercollision to update. Buttons will be the ones using triggers, not cannons
     {
         Instantiate(missilePrefab, spawn.position, spawn.rotation);
     }
