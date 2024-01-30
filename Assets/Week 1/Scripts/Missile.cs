@@ -7,7 +7,7 @@ public class Missile : MonoBehaviour
 
     float speed = 12f;
     Rigidbody2D rigidbody;
-    Vector2 direction = new Vector2(-10, 0); //temporary assignment vector change while I figure out how to have the cannons change the missile's direction as well as its rotation
+    Vector2 direction = new Vector2(-10, 0); //Direction changed to match to rotation of the sprite and the direction the missile is shot at for assignment 1
     // Start is called before the first frame update
     void Start()
     {

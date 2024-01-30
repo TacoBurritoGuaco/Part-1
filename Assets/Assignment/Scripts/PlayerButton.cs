@@ -7,34 +7,35 @@ using UnityEngine;
 public class PlayerButton : MonoBehaviour //this is a revised version of the "lever" code from week 2 with more functionality
 {
     // Start is called before the first frame update
-    public GameObject trigger;
+    public GameObject trigger; //The game object that the button turns on and off
+    float delayTime = 60;
+    bool hasTriggered = false;
     void Start()
     {
 
     }
 
-    // Update is called once per frame
-    void Update()
+    //This Fixedupdate is used specifically to add delay to when an object is turned back on or off to make the game a more enjoyable experience
+    void FixedUpdate()
     {
+        if (hasTriggered) //when an object has been turned on or off
+        {
+            delayTime -= 1; //decrease delayTime by 1 times Time.deltaTime
+        }
+        if (delayTime <= 0) //If delayTime is brought down to 0 or less
+        {
+            trigger.SetActive(true); //turns the trigger that was previously deactivated back on  
+            delayTime = 60; //Resets delaytime
+            hasTriggered = false; //resets hastriggered back to false
+        }
 
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Ok so I've been stuck on this specific thing for 2 hours now so I'll explain my issue
-        //I have NO clue how to make the spawn NOT turn off the canon sprite BUT I've come up with a solution
-        //I'll just have the "Sprite" of the cannon be a wall, and the cannon itself be invisible
-        //That was the cannon doesn't disapear, but the actual function does
-        if (trigger == GameObject.Find("ObjectCannon")) //if the object is a Cannon
-        {
-            trigger.SetActive(!trigger.activeInHierarchy); //deactivate this Cannon
-        }
-        if (trigger == GameObject.Find("Door")) //if the object that is triggered is a door
-        {
-            trigger.SetActive(!trigger.activeInHierarchy); //deactivate this door
-        }
+        trigger.SetActive(!trigger.activeInHierarchy); //deactivate the object added as a trigger
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        trigger.SetActive(true); //turns the trigger that was previously deactivated back o
+        hasTriggered = true; //changes has triggered to true upon exiting the button
     }
 }
