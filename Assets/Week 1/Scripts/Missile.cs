@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class Missile : MonoBehaviour
 {
-
     float speed = 12f;
     Rigidbody2D rigidbody;
     Vector2 direction = new Vector2(-10, 0); //Direction changed to match to rotation of the sprite and the direction the missile is shot at for assignment 1
