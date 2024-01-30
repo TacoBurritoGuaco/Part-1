@@ -1453,6 +1453,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 1722589297}
   force: 2000
+  gameOverScreen: {fileID: 1508543924}
+  winScreen: {fileID: 1965886878}
+  loseScreen: {fileID: 2015868931}
 --- !u!1 &1841349348
 GameObject:
   m_ObjectHideFlags: 0

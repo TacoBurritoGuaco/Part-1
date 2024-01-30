@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Cannon
   - Door
+  - PlayerFun
   layers:
   - Default
   - TransparentFX
