@@ -10,10 +10,6 @@ public class WinCondition : MonoBehaviour
     public GameObject winText; //win text for game over
     public GameObject loseText; //lose screen for game over
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
