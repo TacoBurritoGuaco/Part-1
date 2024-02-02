@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class Missile : MonoBehaviour
@@ -22,8 +24,16 @@ public class Missile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.Translate(speed * Time.deltaTime, 0, 0);
-        //Old week-1 code
+        //finnaly found a way to fix the missile problem!
+        //By simply having every missile check if the game over screen is active, I can have them each individually be destroyed
+        if (!GameObject.Find("GameOverScreen").IsUnityNull()) //checks if the object is null, in which case, it does not continue with the rest of the if statement
+            //This method is really handy to avoid errors! I'll make sure to keep it in mind as I go forwards with the course
+        {
+            if (GameObject.Find("GameOverScreen").activeInHierarchy) //detects if the game over screen is currently active and if it is not null
+            {
+                Destroy(gameObject); //if it is, the missile is destroyed
+            }
+        }
     }
 
     private void FixedUpdate()

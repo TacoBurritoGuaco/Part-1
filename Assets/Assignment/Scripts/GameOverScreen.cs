@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameOverScreen : MonoBehaviour
@@ -17,16 +19,12 @@ public class GameOverScreen : MonoBehaviour
     //Player to reset position of
     public GameObject Player;
     public GameObject button;
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
         //Turn off doors
-        door1.SetActive(false);
-        door2.SetActive(false);
+        door1.SetActive(false); 
+        door2.SetActive(false); 
         door3.SetActive(false);
         //Turn off cannons
         Cannon1.SetActive(false);
@@ -54,6 +52,7 @@ public class GameOverScreen : MonoBehaviour
 
             //resets the button
             button.SetActive(false);
+
             //===========================//
 
             Player.GetComponent<Transform>().localPosition = new Vector3(8, 0, 0); //resets the position of the player back to the player's original position
